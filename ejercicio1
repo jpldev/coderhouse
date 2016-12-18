@@ -1,0 +1,57 @@
+function suma(x, y){
+    
+    return parseInt(x) + parseInt(y);
+}
+
+function resta(x,y){
+    
+    return +x - +y;
+}
+    
+function multiplicacion(x, y){
+    return +x * +y;
+}
+
+function division(x,y){
+    
+        return +x / notZero(y);
+    }
+
+
+function notZero(n) {
+  n = parseInt(n);  
+  if (!n) {  //  +0, -0, NaN
+    alert("Dividendo invalido, no puede ser cero");
+    throw new Error('Dividendo invalido ' + n);
+  }
+  return n;
+}
+
+
+var valor1 = prompt("Ingrese el primer valor");
+var operando = prompt("Ingrese '+', '-', '*' o '/");
+var valor2 = prompt("Ingrese el segundo valor");
+
+switch(operando) {
+    case '+':
+        var s = suma(valor1,valor2);
+        alert ("La suma es " + s);
+        break;
+    case '-':
+        var r = resta(valor1,valor2);
+        alert ("La resta es " + r);
+        break;
+    case '*':
+        var m = multiplicacion(valor1,valor2);
+        alert ("La multiplicacion es " + m);
+        break;
+    case '/':
+        var d = division(valor1,valor2);
+        alert ("La division es " + d);
+        break;
+    
+    default:
+        alert("Ingrese operando valido (+ , - , * , /");
+}
+
+
