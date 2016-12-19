@@ -1,0 +1,48 @@
+/*
+Trabajo Práctico 2 JavaScript
+
+Debera poder ingresar un dia de la semana
+Debera poder compararlo con todos los dias de la semana
+Debera evaluar si es un dia de semana y fin de semana mediante un mensaje similar a 'El dia es habil' sino 'El dia es fin de semana';
+En caso de ennontrar el dia utilizar la sentencia break y terminar el for
+
+*/
+
+
+
+var arr = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
+
+var diaElegido = prompt("Ingrese un dia de la semana: Lunes, Martes, Miercoles, Jueves, Viernes, Sabado o Domingo")
+
+for (var dias in arr){
+    
+    switch(diaElegido){
+        case "Lunes":
+            alert("El dia es habil");
+            break;
+        case "Martes":
+            alert("El dia es habil");
+            break;
+        case "Miercoles":
+            alert("El dia es habil");
+            break;
+        case "Jueves":
+            alert("El dia es habil");
+            break;
+        case "Viernes":
+            alert("El dia es habil");
+            break;
+        case "Sabado":
+            alert("El dia es fin de semana");
+            break;
+        case "Domingo":
+            alert("El dia es fin de semana");
+            break;
+        default:
+            alert("Ingrese un dia valido");
+            break;
+    }
+    break;
+}
+
+
