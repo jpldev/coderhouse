@@ -1,0 +1,72 @@
+/*Crear una funcion que agregue objetos peliculas
+
+El objeto pelicula Debera tener ID, titulo, descripcion, año, duracion, actores, director
+Debera tener metodos para editar todas sus propiedades, menos su ID, y para los actores tendra que ir agregando uno a uno*/
+
+
+function Pelicula(ID, titulo, descripcion, anio, duracion, actor, director){
+
+//Atributos
+
+var actores = [];
+
+this.ID = ID;
+this.titulo = titulo;
+this.descripcion = descripcion;
+this.anio = anio;
+this.duracion = duracion;
+this.actores = actores.push(actor);
+this.director = director;
+
+
+//Metodos
+
+this.editarTitulo = function(nuevoTitulo){
+	this.titulo = nuevoTitulo;
+}
+
+this.editarDescripcion = function(nuevaDescripcion){
+	this.descripcion = nuevaDescripcion;
+}
+
+this.editarAnio = function(nuevoAnio){
+	this.anio = nuevoAnio;
+}
+
+this.editarDuracion = function(nuevaDuracion){
+	this.duracion = nuevaDuracion;
+}
+
+this.editarActor = function(actorEditar, actorEditado){
+	for(i = 0; i < actores.length; i++){
+
+		if(actores[i] == actorEditar){
+
+			actores[i] = actorEditado
+
+		} else{
+			alert("No se encontró el actor a editar");
+		}
+
+
+	}
+}
+
+this.editarDirector = function(nuevoDirector){
+	this.director = nuevoDirector;
+}
+
+this.mostrarActores = function (){
+	
+	for(i = 0; i < actores.length; i++){
+		console.log(actores[i]);
+	}
+}
+
+this.agregarActor = function(nuevoActor){
+	actores.push(nuevoActor);
+}
+
+}
+
+
