@@ -8,41 +8,27 @@ En caso de ennontrar el dia utilizar la sentencia break y terminar el for
 
 */
 
-
+function diasDeLaSemana(){
 
 var arr = ["Lunes", "Martes", "Miercoles", "Jueves", "Viernes", "Sabado", "Domingo"];
 
 var diaElegido = prompt("Ingrese un dia de la semana: Lunes, Martes, Miercoles, Jueves, Viernes, Sabado o Domingo")
 
-for (var dias in arr){
+for (i = 0; i < arr.length; i++){
     
-    switch(diaElegido){
-        case "Lunes":
-            alert("El dia es habil");
-            break;
-        case "Martes":
-            alert("El dia es habil");
-            break;
-        case "Miercoles":
-            alert("El dia es habil");
-            break;
-        case "Jueves":
-            alert("El dia es habil");
-            break;
-        case "Viernes":
-            alert("El dia es habil");
-            break;
-        case "Sabado":
-            alert("El dia es fin de semana");
-            break;
-        case "Domingo":
-            alert("El dia es fin de semana");
-            break;
-        default:
-            alert("Ingrese un dia valido");
-            break;
+    if(diaElegido == arr[i]){
+        if(i <= 4){
+            alert("dia habil");
+    } else {
+        alert("fin de semana");
     }
+    
     break;
+
+    }
+
 }
 
+}
 
+diasDeLaSemana();
