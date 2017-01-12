@@ -1,0 +1,124 @@
+/*
+Crear un array de peliculas
+
+Crear una funcion que agrege una pelicula al array de peliculas
+La pelicula debera tener un ID y un Titulo
+Crear una funcion que evalue antes de agregar que la pelicula no fue ingresada previamente
+Crear una funcion que ordene las peliculas por Titulo y por ID
+Crear una funcion que elimine una pelicula por su ID.*/
+
+
+var IMDB = (function(){
+
+var peliculas = [];
+
+var agregarPelicula = function(id, titulo){
+	
+	var pelicula = {id= id, titulo=titulo};
+
+	var peliculaDuplicada = false;
+
+	for(i = 0; i < peliculas.length; i++){
+
+		if(peliculas[i].id = pelicula.id){
+			peliculaDuplicada = true;
+			break;
+		}
+
+	}
+
+	if(peliculaDuplicada == false){
+
+		peliculas.push(pelicula);
+
+	} else {
+
+		console.log('La pelicula que intenta agregar ya se encuentra guardada');
+	}
+
+}
+
+var comparadorTitulo = function(elementoA, elementoB) {
+
+	var resultado = -1;
+
+	if (elementoA.titulo > elementoB.titulo) {
+
+		resultado = 1;
+
+	}
+
+	if (elementoA.titulo == elementoB.titulo) {
+
+		resultado = 0;
+
+	}
+
+	if (elementoA.titulo < elementoB.titulo) {
+
+		resultado = -1;
+
+	}
+
+	return resultado; 
+}
+
+
+var comparadorId = function(elementoA, elementoB) {
+
+	var resultado = -1;
+
+	if (elementoA.id > elementoB.id) {
+
+		resultado = 1;
+
+	}
+
+	if (elementoA.id == elementoB.id) {
+
+		resultado = 0;
+
+	}
+
+	if (elementoA.id < elementoB.id) {
+
+		resultado = -1;
+
+	}
+
+	return resultado; 
+}
+
+
+var ordenarPeliculasPorTitulo = function(){
+	peliculas.sort(comparadorTitulo)
+}
+
+var ordenarPeliculasPorId = function(){
+	peliculas.sort(comparadorId)
+}
+
+var eliminarPelicula = function(id){
+	
+	for(i = 0; i < peliculas.length; i++){
+
+		if(peliculas[i].id = id){
+			
+			peliculas.splice(i, 1);
+			break;
+		}
+	}
+}
+
+
+return{
+
+	eliminarPelicula: eliminarPelicula,
+	ordenarPeliculasPorId: ordenarPeliculasPorId,
+	ordenarPeliculasPorTitulo: ordenarPeliculasPorTitulo,
+	agregarPelicula: agregarPelicula
+
+
+};
+
+})();
