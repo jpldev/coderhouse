@@ -1,2 +1,1 @@
-# coderhouse
-Ejercicios del curso Programación Web Nivel 2
+# coding exercises
